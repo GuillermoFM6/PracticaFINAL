@@ -4,7 +4,7 @@
 package PracticaFINAL;
 
 public class Library {
-    public boolean someLibraryMethod() {
-        return false;
+    public boolean someLibraryMethod() {//hola
+        return true;
     }
 }
