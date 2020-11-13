@@ -38,7 +38,8 @@ public class ConnectaQuatre {
 	public void setUltCol(int col) {this.ultCol=col;}
 	public void setUltRow(int row) {this.ultRow=row;}
 	public String horitzontal(){
-		return null;
+		String horitzontal = new String(tauler[ultRow]);
+	    return horitzontal;
 		
 	}
 }
