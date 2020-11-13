@@ -37,9 +37,13 @@ public class ConnectaQuatre {
 	}
 	public void setUltCol(int col) {this.ultCol=col;}
 	public void setUltRow(int row) {this.ultRow=row;}
+	// Retornem com a string la fila de la última posició que s'ha actualitzat
 	public String horitzontal(){
 		String horitzontal = new String(tauler[ultRow]);
 	    return horitzontal;
-		
 	}
+	// Retornem com a string la columna de la última posició que s'ha actualitzat
+	  public String vertical() {
+	   return null;
+	  }
 }

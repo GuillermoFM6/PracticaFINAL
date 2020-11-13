@@ -86,5 +86,17 @@ public class ConnectaQuatreTest {
 		 assertEquals(proba, sHoritzontal);
 		 
 	}
+	@Test
+	public void testVertical() {
+		ConnectaQuatre c4=new ConnectaQuatre(5, 9);
+		 for(int j=0;j<c4.getAltura();j++) {
+			  c4.getTauler()[j][0]='H';
+		 }
+		 c4.setUltCol(0);
+		 String sVertical= c4.vertical();
+		 String proba="HHHHHHHHH";
+		 assertEquals(proba, sVertical);
+		 
+	}
 
 }
