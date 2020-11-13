@@ -43,14 +43,18 @@ public class ConnectaQuatre {
 	    return horitzontal;
 	}
 	// Retornem com a string la columna de la última posició que s'ha actualitzat
-	  public String vertical() {
+	public String vertical() {
 		  StringBuilder sb = new StringBuilder(altura);
-
+	
 		    for (int alt = 0; alt < altura; alt++) {
 		      sb.append(tauler[alt][ultCol]);
 		    }
 		    // Aquest to string és una funció de la llibreria StringBuilder, no és la funció que tenim abans implementada
 		    String vertical = sb.toString();
 		    return vertical;
+	  }
+	// Retornem com a string la diagonal "/" de la última posició que s'ha actualitzat
+	public String diagonalPositiva() {
+	    return null;
 	  }
 }

@@ -98,5 +98,25 @@ public class ConnectaQuatreTest {
 		 assertEquals(proba, sVertical);
 		 
 	}
+	@Test
+	public void testDiagonalPositiva() {
+		ConnectaQuatre c4=new ConnectaQuatre(5, 9);
+		c4.setUltCol(0);
+		c4.setUltRow(8);
+	    for (int alt = 0; alt < c4.getAltura(); alt++) {
+	      int amp = c4.getUltCol() + c4.getUltRow() - alt;
+
+	      if (0 <= amp && amp < c4.getAmplada()) {
+	        c4.getTauler()[alt][amp]='H';
+	      		}
+	    }
+	     
+		 String sDiagonalPositiva= c4.diagonalPositiva();
+		 String proba="HHHHH";
+		 assertEquals(proba, sDiagonalPositiva);
+		 
+		 
+	  }
 
 }
+
