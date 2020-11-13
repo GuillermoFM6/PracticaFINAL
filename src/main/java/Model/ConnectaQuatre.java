@@ -13,9 +13,9 @@ public class ConnectaQuatre {
 	//Quadricula per el tauler
 	private final char[][] tauler;
 	
-	public int getUltCol() { return 0;}
+	public int getUltCol() { return ultCol;}
 	
-	public int getUltRow() {return 0;}
+	public int getUltRow() {return ultRow;}
 	
 	public int getAmplada() {return amplada;}
 	
@@ -35,8 +35,8 @@ public class ConnectaQuatre {
 		}
 		
 	}
-	public void setUltCol(int col) {}
-	public void setUltRow(int row) {}
+	public void setUltCol(int col) {this.ultCol=col;}
+	public void setUltRow(int row) {this.ultRow=row;}
 	public String horitzontal(){
 		return null;
 		
