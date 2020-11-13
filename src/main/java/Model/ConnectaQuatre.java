@@ -55,6 +55,16 @@ public class ConnectaQuatre {
 	  }
 	// Retornem com a string la diagonal "/" de la última posició que s'ha actualitzat
 	public String diagonalPositiva() {
-	    return null;
+		StringBuilder sb = new StringBuilder(altura);
+
+	    for (int alt = 0; alt < altura; alt++) {
+	      int amp = ultCol + ultRow - alt;
+
+	      if (0 <= amp && amp < amplada) {
+	        sb.append(tauler[alt][amp]);
+	      }
+	    }
+	    String diagonal = sb.toString();
+	    return diagonal;
 	  }
 }
