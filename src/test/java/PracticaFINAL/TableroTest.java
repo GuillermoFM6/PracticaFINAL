@@ -8,13 +8,13 @@ public class TableroTest {
 
 	@Test 
 	public void testgetRows() {
-		Tablero tab= new Tablero(4, 0);
+		Tablero tab= new Tablero(0, 4);
 		int row=tab.getRow();
 		assertEquals(row,4);
 	}
 	@Test
 	public void testgetCol() {
-			Tablero tab= new Tablero(0, 4);
+			Tablero tab= new Tablero(4, 0);
 			int col=tab.getCol();
 			assertEquals(col,4);
 		}
