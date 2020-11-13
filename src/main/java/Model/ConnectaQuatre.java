@@ -13,6 +13,10 @@ public class ConnectaQuatre {
 	//Quadricula per el tauler
 	private final char[][] tauler;
 	
+	public int getUltCol() { return 0;}
+	
+	public int getUltRow() {return 0;}
+	
 	public int getAmplada() {return amplada;}
 	
 	public int getAltura() {return altura;}
@@ -29,6 +33,12 @@ public class ConnectaQuatre {
 		for (int i=0; i<alt; i++) {
 			Arrays.fill(tauler[i]= new char[amp], '.');
 		}
+		
+	}
+	public void setUltCol(int col) {}
+	public void setUltRow(int row) {}
+	public String horitzontal(){
+		return null;
 		
 	}
 }

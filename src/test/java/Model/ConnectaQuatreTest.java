@@ -39,7 +39,7 @@ public class ConnectaQuatreTest {
 		assertEquals('R', Jugador1);
 	}
 	@Test
-	public void ConnectaQuatre() {
+	public void testConnectaQuatre() {
 		ConnectaQuatre c4=new ConnectaQuatre(5, 9);
 		 assertEquals( c4.getAltura(),9 );
 		 assertEquals(c4.getAmplada(), 5);
@@ -49,5 +49,39 @@ public class ConnectaQuatreTest {
 			 }
 		 }
 	}
+	@Test
+	public void testGetUltCol(){
+		ConnectaQuatre c4=new ConnectaQuatre(3,4);
+		int c4ultCol=c4.getUltCol();
+		assertEquals(-1, c4ultCol);
+	}
+	@Test
+	public void testGetUltRow(){
+		ConnectaQuatre c4=new ConnectaQuatre(3,4);
+		int c4ultRow=c4.getUltRow();
+		assertEquals(-1, c4ultRow);
+	}
+	
+	@Test
+	public void testSetUltCol() {
+		ConnectaQuatre c4= new ConnectaQuatre(5, 6);
+		c4.setUltCol(2);
+		assertEquals(2, c4.getUltCol());
+	}
+	@Test
+	public void testSetUltRow() {
+		ConnectaQuatre c4= new ConnectaQuatre(5, 6);
+		c4.setUltRow(2);
+		assertEquals(2, c4.getUltRow());
+	}
+	/*@Test
+	public void testHoritzontal() {
+		ConnectaQuatre c4=new ConnectaQuatre(5, 9);
+		 for(int j=0;j<c4.getAmplada();j++) {
+			  c4.getTauler()[0][j]='H';
+		 }
+		 assertEquals(expected, actual);
+		 
+	}*/
 
 }
