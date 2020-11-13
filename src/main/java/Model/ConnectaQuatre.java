@@ -13,18 +13,22 @@ public class ConnectaQuatre {
 	//Quadricula per el tauler
 	private final char[][] tauler;
 	
-	public int getAmplada() {return 0;}
+	public int getAmplada() {return amplada;}
 	
-	public int getAltura() {return 0;}
+	public int getAltura() {return altura;}
 	
-	public char[] getJugador() {return null;}
+	public char[] getJugador() {return JUGADORS;}
 	
-	public char [][] getTauler(){return null;}
+	public char [][] getTauler(){return tauler;}
 	
 	public ConnectaQuatre(int amp,int alt) {
-		this.tauler = null;
-		this.altura=0;
-		this.amplada=0;
+		amplada = amp;
+		altura = alt;
+		tauler = new char[alt][];
+		//Inicialitzem el tauler amb espais blancs
+		for (int i=0; i<alt; i++) {
+			Arrays.fill(tauler[i]= new char[amp], '.');
+		}
 		
 	}
 }
