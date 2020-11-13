@@ -1,17 +1,20 @@
 package PracticaFINAL;
 
 public class Jugador {
-	private int player = 1;
+	private int player;
 	private boolean winner=false;
 	
+	public Jugador(int player) {
+		
+	}
 	
 	public int getPlayer()
 	{
-		return player;
+		return 0;
 	}
 	public boolean getGuanyador()
 	{
-		return winner;
+		return true;
 	}
 	
 	
