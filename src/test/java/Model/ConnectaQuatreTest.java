@@ -74,14 +74,17 @@ public class ConnectaQuatreTest {
 		c4.setUltRow(2);
 		assertEquals(2, c4.getUltRow());
 	}
-	/*@Test
+	@Test
 	public void testHoritzontal() {
 		ConnectaQuatre c4=new ConnectaQuatre(5, 9);
 		 for(int j=0;j<c4.getAmplada();j++) {
 			  c4.getTauler()[0][j]='H';
 		 }
-		 assertEquals(expected, actual);
+		 c4.setUltRow(0);
+		 String sHoritzontal= c4.horitzontal();
+		 String proba = "HHHHH";
+		 assertEquals(proba, sHoritzontal);
 		 
-	}*/
+	}
 
 }
