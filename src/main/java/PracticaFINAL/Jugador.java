@@ -4,6 +4,7 @@ public class Jugador {
 	private int player = 1;
 	private boolean winner=false;
 	
+	
 	public int getPlayer()
 	{
 		return player;
@@ -12,6 +13,6 @@ public class Jugador {
 	{
 		return winner;
 	}
-
+	
 	
 }
