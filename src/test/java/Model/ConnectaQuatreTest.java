@@ -4,10 +4,11 @@ import static org.junit.Assert.*;
 
 import java.awt.print.Printable;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class ConnectaQuatreTest {
-
+	
 	@Test
 	public void testgetAmplada(){
 		ConnectaQuatre c4=new ConnectaQuatre(3,4);
@@ -88,6 +89,7 @@ public class ConnectaQuatreTest {
 	}
 	@Test
 	public void testVertical() {
+		//Funcionament normal de la funció
 		ConnectaQuatre c4=new ConnectaQuatre(5, 9);
 		 for(int j=0;j<c4.getAltura();j++) {
 			  c4.getTauler()[j][0]='H';
@@ -96,6 +98,33 @@ public class ConnectaQuatreTest {
 		 String sVertical= c4.vertical();
 		 String proba="HHHHHHHHH";
 		 assertEquals(proba, sVertical);
+		 //Valor limit per evitar el loop
+		 ConnectaQuatre c4limit =new ConnectaQuatre(6, 0);
+		 for(int j=0;j<c4limit.getAltura();j++) {
+			  c4limit.getTauler()[j][0]='H';
+		 }
+		 c4limit.setUltCol(0);
+		 String verticallimit= c4limit.vertical();
+		 assertEquals("", verticallimit);
+		//Valor limit per evitar el loop
+		 ConnectaQuatre c41loop =new ConnectaQuatre(6, 1);
+		 for(int j=0;j<c41loop.getAltura();j++) {
+			  c41loop.getTauler()[j][0]='H';
+		 }
+		 c41loop.setUltCol(0);
+		 String verticallimit1= c41loop.vertical();
+		 assertEquals("H", verticallimit1);
+		 //Valor limit gran per fer moltes passadas
+		 ConnectaQuatre c4gran =new ConnectaQuatre(6, 15);
+		 for(int j=0;j<c4gran.getAltura();j++) {
+			  c4gran.getTauler()[j][0]='H';
+		 }
+		 c4gran.setUltCol(0);
+		 String verticallimitgran= c4gran.vertical();
+		 System.out.println(verticallimitgran);
+		 assertEquals("HHHHHHHHHHHHHHH", verticallimitgran);
+		 
+		
 		 
 	}
 	@Test

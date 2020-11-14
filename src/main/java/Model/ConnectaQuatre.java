@@ -81,4 +81,5 @@ public class ConnectaQuatre {
 	    String diagonal = sb.toString();
 	    return diagonal;
 	  }
+	 
 }
