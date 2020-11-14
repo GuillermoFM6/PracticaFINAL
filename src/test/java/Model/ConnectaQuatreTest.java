@@ -106,7 +106,7 @@ public class ConnectaQuatreTest {
 		 c4limit.setUltCol(0);
 		 String verticallimit= c4limit.vertical();
 		 assertEquals("", verticallimit);
-		//Valor limit per evitar el loop
+		//Valor limit per entrar un cop al loop
 		 ConnectaQuatre c41loop =new ConnectaQuatre(6, 1);
 		 for(int j=0;j<c41loop.getAltura();j++) {
 			  c41loop.getTauler()[j][0]='H';
@@ -121,7 +121,6 @@ public class ConnectaQuatreTest {
 		 }
 		 c4gran.setUltCol(0);
 		 String verticallimitgran= c4gran.vertical();
-		 System.out.println(verticallimitgran);
 		 assertEquals("HHHHHHHHHHHHHHH", verticallimitgran);
 		 
 		
@@ -129,6 +128,7 @@ public class ConnectaQuatreTest {
 	}
 	@Test
 	public void testDiagonalPositiva() {
+		//Test amb funcionament normal.
 		ConnectaQuatre c4=new ConnectaQuatre(5, 9);
 		c4.setUltCol(0);
 		c4.setUltRow(8);
@@ -143,6 +143,51 @@ public class ConnectaQuatreTest {
 		 String sDiagonalPositiva= c4.diagonalPositiva();
 		 String proba="HHHHH";
 		 assertEquals(proba, sDiagonalPositiva);
+		 //Valor limit per evitar el loop
+		 ConnectaQuatre c4limit=new ConnectaQuatre(6, 0);
+			c4limit.setUltCol(0);
+			c4limit.setUltRow(0);
+		    for (int alt = 0; alt < c4limit.getAltura(); alt++) {
+		      int amp = c4limit.getUltCol() + c4limit.getUltRow() - alt;
+	
+		      if (0 <= amp && amp < c4limit.getAmplada()) {
+		        c4limit.getTauler()[alt][amp]='H';
+		      		}
+		    }
+		     
+			 String sDiagonalPositivalimit= c4limit.diagonalPositiva();
+			 String probalimit="";
+			 assertEquals(probalimit, sDiagonalPositivalimit);
+		//Valor limit per entrar una vegada al loop
+		 ConnectaQuatre c4limit1=new ConnectaQuatre(6, 1);
+			c4limit1.setUltCol(0);
+			c4limit1.setUltRow(0);
+		    for (int alt = 0; alt < c4limit1.getAltura(); alt++) {
+		      int amp = c4limit1.getUltCol() + c4limit1.getUltRow() - alt;
+	
+		      if (0 <= amp && amp < c4limit1.getAmplada()) {
+		        c4limit1.getTauler()[alt][amp]='H';
+		      		}
+		    }
+		     
+			 String sDiagonalPositivalimit1= c4limit1.diagonalPositiva();
+			 String probalimit1="H";
+			
+			 assertEquals(probalimit1, sDiagonalPositivalimit1);
+		//Valor limit per entrar molts cops al loop
+		 ConnectaQuatre c4limitm=new ConnectaQuatre(6, 25);
+			c4limitm.setUltCol(0);
+			c4limitm.setUltRow(5);
+		    for (int alt = 0; alt < c4limitm.getAltura(); alt++) {
+		      int amp = c4limitm.getUltCol() + c4limitm.getUltRow() - alt;
+	
+		      if (0 <= amp && amp < c4limitm.getAmplada()) {
+		        c4limitm.getTauler()[alt][amp]='H';
+		      		}
+		    }
+			 String sDiagonalPositivalimitm= c4limitm.diagonalPositiva();
+			 String probalimitm="HHHHHH";
+			 assertEquals(probalimitm, sDiagonalPositivalimitm);
 		 
 	}
 	@Test
