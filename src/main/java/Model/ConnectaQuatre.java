@@ -67,4 +67,8 @@ public class ConnectaQuatre {
 	    String diagonal = sb.toString();
 	    return diagonal;
 	  }
+	 // Retornem com a string la diagonal "\" de la última posició que s'ha actualitzat
+	 public String diagonalNegativa() {
+	   return null;
+	  }
 }
