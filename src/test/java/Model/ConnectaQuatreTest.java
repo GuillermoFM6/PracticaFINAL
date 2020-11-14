@@ -269,6 +269,32 @@ public class ConnectaQuatreTest {
 		//Comprobem que el nombre s'ha introduit a la posició correcta a sobre de un altre simbol.
 		String columnaString2 = c4.vertical();
 		assertEquals(".....YR", columnaString2);
+		//Test condicio if false
+		ConnectaQuatre c4col = new ConnectaQuatre(6, 2);
+		boolean proba=c4col.posarSimbol(3, 'Y');
+		 		proba=c4col.posarSimbol(3, 'Y');
+		 		proba=c4col.posarSimbol(3, 'Y');
+		assertEquals(false, proba);
+		//Test amb valor limit per evitar loop
+		ConnectaQuatre c4no = new ConnectaQuatre(6, 0);
+		boolean testno=c4no.posarSimbol(1, 'Y');
+		assertEquals(false, testno);
+		//Test amb valor limit per entrar 1 cop al loop
+		ConnectaQuatre c4lim = new ConnectaQuatre(6, 1);
+		boolean c4limit=c4lim.posarSimbol(3, 'R');	
+		assertEquals(true, c4limit);
+		String columnaStringlimit=c4lim.vertical();
+		assertEquals("R", columnaStringlimit);
+		//Test amb valor limit per entrar moltes vegades al loop
+		ConnectaQuatre c4mol = new ConnectaQuatre(6, 15);
+		boolean c4molt=false;
+		for(int i=0;i<c4mol.getAltura();i++)
+		{c4molt=c4mol.posarSimbol(3, 'R');}
+		assertEquals(true, c4molt);
+		String columnaStringmolt=c4mol.vertical();
+		assertEquals("RRRRRRRRRRRRRRR", columnaStringmolt);
+		
+		
 	}
 
 }
