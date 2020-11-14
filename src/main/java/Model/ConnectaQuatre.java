@@ -99,7 +99,17 @@ public class ConnectaQuatre {
 	    return dins;
 	  }
 	public boolean jugadaGuanyadora() {
-		return false;
+		if (ultCol == -1) 
+			{
+		      System.err.println("Encara no s'han fet moviments");
+		      return false;
+		    }
+		    char caracter =tauler[ultRow][ultCol];
+		    //Possible String guanyadora
+		    String guanyadora =String.format("%c%c%c%c", caracter, caracter, caracter, caracter);
+		    //Mira si la String guanyadora es troba en alguna de les strings que generem a partir de l'últim moviment
+		    Boolean trobat = estaDins(horitzontal(), guanyadora) || estaDins(vertical(), guanyadora) || estaDins(diagonalPositiva(), guanyadora) || estaDins(diagonalNegativa(), guanyadora);
+		    return trobat;
 	}
 	 
 }

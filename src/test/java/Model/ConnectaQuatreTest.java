@@ -321,7 +321,7 @@ public class ConnectaQuatreTest {
 		test1=c4v.posarSimbol(1, 'Y');
 		boolean testwinvertical=c4v.jugadaGuanyadora();
 		assertEquals(true,testwinvertical );
-		//Test comprobació jugada amb verticalPossitiva
+		//Test comprobació jugada amb diagonalpositiva
 		ConnectaQuatre c4dp =new ConnectaQuatre(6, 7);
 		boolean test2=c4dp.posarSimbol(1, 'Y');
 		test2=c4dp.posarSimbol(2, 'R');
@@ -335,7 +335,7 @@ public class ConnectaQuatreTest {
 		test2=c4dp.posarSimbol(4, 'Y');
 		boolean testwindiagonalP=c4dp.jugadaGuanyadora();
 		assertEquals(true,testwindiagonalP );
-		//Test comprobació jugada amb verticalPossitiva
+		//Test comprobació jugada amb DiagonalNegativa
 		ConnectaQuatre c4dn =new ConnectaQuatre(6, 7);
 		boolean test3=c4dn.posarSimbol(4, 'Y');
 		test3=c4dn.posarSimbol(3, 'R');
@@ -346,7 +346,7 @@ public class ConnectaQuatreTest {
 		test3=c4dn.posarSimbol(1, 'Y');
 		test3=c4dn.posarSimbol(1, 'R');
 		test3=c4dn.posarSimbol(1, 'R');
-		test3=c4dn.posarSimbol(1, 'N');
+		test3=c4dn.posarSimbol(1, 'Y');
 		boolean testwindiagonalN=c4dn.jugadaGuanyadora();
 		assertEquals(true,testwindiagonalN );
 		
