@@ -77,10 +77,9 @@ public class ConnectaQuatreTest {
 	}
 	@Test
 	public void testHoritzontal() {
+		MockTableroHoritzontal mcHoritzontal =new MockTableroHoritzontal();
 		ConnectaQuatre c4=new ConnectaQuatre(5, 9);
-		 for(int j=0;j<c4.getAmplada();j++) {
-			  c4.getTauler()[0][j]='H';
-		 }
+		 c4.setTauler(mcHoritzontal.getTauler());
 		 c4.setUltRow(0);
 		 String sHoritzontal= c4.horitzontal();
 		 String proba = "HHHHH";
@@ -90,10 +89,13 @@ public class ConnectaQuatreTest {
 	@Test
 	public void testVertical() {
 		//Funcionament normal de la funció
-		ConnectaQuatre c4=new ConnectaQuatre(5, 9);
-		 for(int j=0;j<c4.getAltura();j++) {
+		//ConnectaQuatre c4=new ConnectaQuatre(5, 9);
+		 /*for(int j=0;j<c4.getAltura();j++) {
 			  c4.getTauler()[j][0]='H';
-		 }
+		 }*/
+		 MockTableroVertical mcVertical= new MockTableroVertical();
+		 ConnectaQuatre c4=new ConnectaQuatre(5, 9);
+		 c4.setTauler(mcVertical.getTauler());
 		 c4.setUltCol(0);
 		 String sVertical= c4.vertical();
 		 String proba="HHHHHHHHH";

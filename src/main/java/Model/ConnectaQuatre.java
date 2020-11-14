@@ -3,6 +3,7 @@ package Model;
 import java.util.Arrays;
 
 
+
 public class ConnectaQuatre {
 	//Definim les fitxes de cada jugador
 	private static final char[] JUGADORS = {'R','Y'};
@@ -11,7 +12,7 @@ public class ConnectaQuatre {
 	//Dimensions del tauler
 	private final int amplada, altura;
 	//Quadricula per el tauler
-	private final char[][] tauler;
+	private  char[][] tauler;
 	
 	public int getUltCol() { return ultCol;}
 	
@@ -24,6 +25,8 @@ public class ConnectaQuatre {
 	public char[] getJugador() {return JUGADORS;}
 	
 	public char [][] getTauler(){return tauler;}
+	
+	public void setTauler(char [][]a) {tauler=a;}
 	
 	public ConnectaQuatre(int amp,int alt) {
 		amplada = amp;
@@ -108,7 +111,14 @@ public class ConnectaQuatre {
 		    //Possible String guanyadora
 		    String guanyadora =String.format("%c%c%c%c", caracter, caracter, caracter, caracter);
 		    //Mira si la String guanyadora es troba en alguna de les strings que generem a partir de l'últim moviment
-		    Boolean trobat = estaDins(horitzontal(), guanyadora) || estaDins(vertical(), guanyadora) || estaDins(diagonalPositiva(), guanyadora) || estaDins(diagonalNegativa(), guanyadora);
+		    boolean trobat=false;
+		    if( estaDins(horitzontal(), guanyadora) || 
+		    		estaDins(vertical(), guanyadora) || 
+		    		estaDins(diagonalPositiva(), guanyadora) || 
+		    		estaDins(diagonalNegativa(), guanyadora))
+			{
+			    trobat=true;
+			}
 		    return trobat;
 	}
 	 

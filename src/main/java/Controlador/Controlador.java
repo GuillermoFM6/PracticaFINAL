@@ -20,7 +20,8 @@ public class Controlador {
 	          vistas.printTornJugador(symbol);
 	          int col = tec.leerDato(input);
 	          //Comprobem que la columna que ens ha donat el jugador és vàlida
-	          if (!(0 <= col && col < board.getAmplada())) {
+	          if (!(0 <= col && 
+	        		  col < board.getAmplada())) {
 	              int ampmenys1 = board.getAmplada() - 1;
 	              vistas.printAmpladaTauler(ampmenys1);
 	          }else {

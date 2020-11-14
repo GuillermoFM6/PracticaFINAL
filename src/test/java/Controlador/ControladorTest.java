@@ -33,6 +33,7 @@ public class ControladorTest {
 	@Test
 	public void testFerJugada()
 	{
+		
 		//Test Columna incorrecta i jugada guanyadora.LimitFrontera.
 		int moves=8*6;
 		Controlador test =new Controlador(8, 6);
@@ -86,6 +87,7 @@ public class ControladorTest {
 		
 		}
 		assertEquals(true, jugadaGuanyadora1);
+		
 		//Test Columna incorrecta i jugada guanyadora.Limit frontera.
 		int moves3=8*6;
 		Controlador test3 =new Controlador(8, 6);
