@@ -192,6 +192,7 @@ public class ConnectaQuatreTest {
 	}
 	@Test
 	public void testDiagonalNegativa() {
+		//TEST amb funcionament normal
 		ConnectaQuatre c4=new ConnectaQuatre(5, 9);
 		c4.setUltCol(4);
 		c4.setUltRow(8);
@@ -206,7 +207,52 @@ public class ConnectaQuatreTest {
 		 String sDiagonalNegativa= c4.diagonalNegativa();
 		 String proba="HHHHH";
 		 assertEquals(proba, sDiagonalNegativa);
+		 //TEST amb valor limit per evitar loop
+		ConnectaQuatre c4lim=new ConnectaQuatre(6, 0);
+		c4lim.setUltCol(0);
+		c4lim.setUltRow(0);
+	    for (int alt = 0; alt < c4lim.getAltura(); alt++) {
+	      int amp = c4lim.getUltCol() - c4lim.getUltRow() + alt;
+
+	      if (0 <= amp && amp < c4lim.getAmplada()) {
+	        c4lim.getTauler()[alt][amp]='H';
+	      		}
+	    }
+	     
+		 String sDiagonalNegativalim= c4lim.diagonalNegativa();
+		 String probalim="";
+		 assertEquals(probalim, sDiagonalNegativalim);
+		 //TEST amb valor limit per entrar 1 cop al loop
+		ConnectaQuatre c4lim1=new ConnectaQuatre(6, 1);
+		c4lim1.setUltCol(5);
+		c4lim1.setUltRow(0);
+	    for (int alt = 0; alt < c4lim1.getAltura(); alt++) {
+	      int amp = c4lim1.getUltCol() - c4lim1.getUltRow() + alt;
+
+	      if (0 <= amp && amp < c4lim1.getAmplada()) {
+	        c4lim1.getTauler()[alt][amp]='H';
+	      		}
+	    }
+	     
+		 String sDiagonalNegativalim1= c4lim1.diagonalNegativa();
 		 
+		 String probalim1="H";
+		 assertEquals(probalim1, sDiagonalNegativalim1);
+		//TEST amb valor limit per entrar molts cops al loop
+		ConnectaQuatre c4limm=new ConnectaQuatre(6, 25);
+		c4limm.setUltCol(5);
+		c4limm.setUltRow(24);
+	    for (int alt = 0; alt < c4limm.getAltura(); alt++) {
+	      int amp = c4limm.getUltCol() - c4limm.getUltRow() + alt;
+
+	      if (0 <= amp && amp < c4limm.getAmplada()) {
+	        c4limm.getTauler()[alt][amp]='H';
+	      		}
+	    }
+	     
+		 String sDiagonalNegativalimm= c4limm.diagonalNegativa();
+		 String probalimm="HHHHHH";
+		 assertEquals(probalimm, sDiagonalNegativalimm);
 	}
 
 }
