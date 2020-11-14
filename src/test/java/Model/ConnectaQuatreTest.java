@@ -254,6 +254,22 @@ public class ConnectaQuatreTest {
 		 String probalimm="HHHHHH";
 		 assertEquals(probalimm, sDiagonalNegativalimm);
 	}
+	@Test
+	public void testposarSimbol() {
+		//Comprobem que s'ha introduit el nombre correctament
+		ConnectaQuatre c4 = new ConnectaQuatre(6, 7);
+		boolean c4proba=c4.posarSimbol(3, 'R');	
+		assertEquals(true, c4proba);
+		//Comprobem que el nombre s'ha introduit a la posició correcta
+		String columnaString=c4.vertical();
+		assertEquals("......R", columnaString);
+		//Comprobem que s'ha introduit correctament a sobre de un altre simbol.
+		boolean c4proba2=c4.posarSimbol(3, 'Y');
+		assertEquals(true, c4proba2);
+		//Comprobem que el nombre s'ha introduit a la posició correcta a sobre de un altre simbol.
+		String columnaString2 = c4.vertical();
+		assertEquals(".....YR", columnaString2);
+	}
 
 }
 

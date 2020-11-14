@@ -81,5 +81,8 @@ public class ConnectaQuatre {
 	    String diagonal = sb.toString();
 	    return diagonal;
 	  }
-	 
+	 //Coloca el simbol del jugador a la posició dessitjada
+	 public Boolean posarSimbol(int col, char symbol) {
+		return false;
+	  }
 }
