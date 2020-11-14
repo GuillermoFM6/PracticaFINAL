@@ -303,6 +303,55 @@ public class ConnectaQuatreTest {
 		boolean Probafalse=ConnectaQuatre.estaDins("YRYRYRYRYRYRY", "RRRR");
 		assertEquals(false, Probafalse);
 	}
+	@Test
+	public void testjugadaGuanyadora() {
+		//Test comprobació jugada amb horitzontal
+		ConnectaQuatre c4h =new ConnectaQuatre(6, 7);
+		boolean test=c4h.posarSimbol(1, 'Y');
+		test=c4h.posarSimbol(2, 'Y');
+		test=c4h.posarSimbol(3, 'Y');
+		test=c4h.posarSimbol(4, 'Y');
+		boolean testwinhoritzontal=c4h.jugadaGuanyadora();
+		assertEquals(true,testwinhoritzontal );
+		//Test comprobació jugada amb vertical
+		ConnectaQuatre c4v =new ConnectaQuatre(6, 7);
+		boolean test1=c4v.posarSimbol(1, 'Y');
+		test1=c4v.posarSimbol(1, 'Y');
+		test1=c4v.posarSimbol(1, 'Y');
+		test1=c4v.posarSimbol(1, 'Y');
+		boolean testwinvertical=c4v.jugadaGuanyadora();
+		assertEquals(true,testwinvertical );
+		//Test comprobació jugada amb verticalPossitiva
+		ConnectaQuatre c4dp =new ConnectaQuatre(6, 7);
+		boolean test2=c4dp.posarSimbol(1, 'Y');
+		test2=c4dp.posarSimbol(2, 'R');
+		test2=c4dp.posarSimbol(2, 'Y');
+		test2=c4dp.posarSimbol(3, 'R');
+		test2=c4dp.posarSimbol(3, 'R');
+		test2=c4dp.posarSimbol(3, 'Y');
+		test2=c4dp.posarSimbol(4, 'Y');
+		test2=c4dp.posarSimbol(4, 'R');
+		test2=c4dp.posarSimbol(4, 'R');
+		test2=c4dp.posarSimbol(4, 'Y');
+		boolean testwindiagonalP=c4dp.jugadaGuanyadora();
+		assertEquals(true,testwindiagonalP );
+		//Test comprobació jugada amb verticalPossitiva
+		ConnectaQuatre c4dn =new ConnectaQuatre(6, 7);
+		boolean test3=c4dn.posarSimbol(4, 'Y');
+		test3=c4dn.posarSimbol(3, 'R');
+		test3=c4dn.posarSimbol(3, 'Y');
+		test3=c4dn.posarSimbol(2, 'R');
+		test3=c4dn.posarSimbol(2, 'R');
+		test3=c4dn.posarSimbol(2, 'Y');
+		test3=c4dn.posarSimbol(1, 'Y');
+		test3=c4dn.posarSimbol(1, 'R');
+		test3=c4dn.posarSimbol(1, 'R');
+		test3=c4dn.posarSimbol(1, 'N');
+		boolean testwindiagonalN=c4dn.jugadaGuanyadora();
+		assertEquals(true,testwindiagonalN );
+		
+		
+	}
 	
 
 }

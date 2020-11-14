@@ -98,5 +98,8 @@ public class ConnectaQuatre {
 	    Boolean dins = str.indexOf(guanyadora) >= 0;
 	    return dins;
 	  }
+	public boolean jugadaGuanyadora() {
+		return false;
+	}
 	 
 }
