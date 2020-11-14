@@ -293,9 +293,17 @@ public class ConnectaQuatreTest {
 		assertEquals(true, c4molt);
 		String columnaStringmolt=c4mol.vertical();
 		assertEquals("RRRRRRRRRRRRRRR", columnaStringmolt);
-		
-		
 	}
+	@Test
+	public void testEstadins()
+	{
+		
+		boolean PROBAtrue=ConnectaQuatre.estaDins("YYYYRRRRYYYY", "RRRR");
+		assertEquals(true, PROBAtrue);
+		boolean Probafalse=ConnectaQuatre.estaDins("YRYRYRYRYRYRY", "RRRR");
+		assertEquals(false, Probafalse);
+	}
+	
 
 }
 
