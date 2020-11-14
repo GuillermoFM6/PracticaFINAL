@@ -95,7 +95,8 @@ public class ConnectaQuatre {
 	  }
 	// Mètode per comprovar si una String conté una Substring al seu interior
 	public static boolean estaDins(String str, String guanyadora) {
-	    return false;
+	    Boolean dins = str.indexOf(guanyadora) >= 0;
+	    return dins;
 	  }
 	 
 }
