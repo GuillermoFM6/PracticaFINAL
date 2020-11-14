@@ -83,6 +83,14 @@ public class ConnectaQuatre {
 	  }
 	 //Coloca el simbol del jugador a la posició dessitjada
 	 public Boolean posarSimbol(int col, char symbol) {
-		return false;
+		  Boolean ficat=false;
+		  for (int h = altura - 1; h >= 0; h--) {
+			  if (tauler[h][col] == '.') {
+				  tauler[ultRow = h][ultCol = col] = symbol;
+				  ficat = true;
+				  break;
+			  }
+	      }
+		  return ficat;
 	  }
 }
