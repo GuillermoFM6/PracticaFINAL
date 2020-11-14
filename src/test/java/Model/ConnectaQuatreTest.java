@@ -349,8 +349,19 @@ public class ConnectaQuatreTest {
 		test3=c4dn.posarSimbol(1, 'Y');
 		boolean testwindiagonalN=c4dn.jugadaGuanyadora();
 		assertEquals(true,testwindiagonalN );
-		
-		
+		//Test comprovacio false
+		ConnectaQuatre c4f =new ConnectaQuatre(6, 7);
+		boolean test4=c4f.posarSimbol(1, 'Y');
+		test4=c4f.posarSimbol(1, 'Y');
+		test4=c4f.posarSimbol(1, 'Y');
+		test4=c4f.posarSimbol(1, 'R');
+		boolean testfalse=c4f.jugadaGuanyadora();
+		assertEquals(false,testfalse );
+		//Test comprovacio if true
+		ConnectaQuatre c4if =new ConnectaQuatre(6, 7);
+		boolean testiffalse=c4if.jugadaGuanyadora();
+		assertEquals(false, testiffalse);
+
 	}
 	
 
