@@ -1,6 +1,8 @@
 package Model;
 
 import java.util.Arrays;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 
 
@@ -121,5 +123,16 @@ public class ConnectaQuatre {
 			}
 		    return trobat;
 	}
+	// Fem ús de la llibreria Stream per representar millor el tauler cada vegada que el volem mostrar per pantalla
+	public String toString() {
+	    return IntStream.range(0,  amplada).
+	           mapToObj(Integer::toString).
+	           collect(Collectors.joining()) + 
+	           "\n" +
+	           Arrays.stream(tauler).
+	           map(String::new).
+	           collect(Collectors.joining("\n"));
+	  }
+ 
 	 
 }

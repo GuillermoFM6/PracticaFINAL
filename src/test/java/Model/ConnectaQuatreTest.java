@@ -11,19 +11,21 @@ public class ConnectaQuatreTest {
 	
 	@Test
 	public void testgetAmplada(){
+		//Comproba que el get es realitza correctament
 		ConnectaQuatre c4=new ConnectaQuatre(3,4);
 		int c4amplada=c4.getAmplada();
 		assertEquals(3, c4amplada);
 	}
 	@Test
 	public void testgetAltura(){
+		//Comproba que el get es realitza correctament
 		ConnectaQuatre c4=new ConnectaQuatre(3,4);
 		int c4altura=c4.getAltura();
 		assertEquals(4, c4altura);
 	}
 	@Test
 	public void testgetTauler()
-	{
+	{//Comproba que el get es realitza correctament
 		ConnectaQuatre c4=new ConnectaQuatre(5, 9);
 		char c4tauler[][]= c4.getTauler();
 		 int amplada = c4tauler[0].length;
@@ -33,6 +35,7 @@ public class ConnectaQuatreTest {
 	}
 	@Test
 	public void testgetJugador(){
+		//Comproba que el get es realitza correctament
 		ConnectaQuatre c4= new ConnectaQuatre(5, 6);
 		char Jugador1= c4.getJugador()[0];
 		char Jugador2= c4.getJugador()[1];
@@ -41,6 +44,7 @@ public class ConnectaQuatreTest {
 	}
 	@Test
 	public void testConnectaQuatre() {
+		//Comproba que el constructor es realitza correctament
 		ConnectaQuatre c4=new ConnectaQuatre(5, 9);
 		 assertEquals( c4.getAltura(),9 );
 		 assertEquals(c4.getAmplada(), 5);
@@ -52,12 +56,14 @@ public class ConnectaQuatreTest {
 	}
 	@Test
 	public void testGetUltCol(){
+		////Comproba que el get es realitza correctament
 		ConnectaQuatre c4=new ConnectaQuatre(3,4);
 		int c4ultCol=c4.getUltCol();
 		assertEquals(-1, c4ultCol);
 	}
 	@Test
 	public void testGetUltRow(){
+		//Comproba que el get es realitza correctament
 		ConnectaQuatre c4=new ConnectaQuatre(3,4);
 		int c4ultRow=c4.getUltRow();
 		assertEquals(-1, c4ultRow);
@@ -65,18 +71,21 @@ public class ConnectaQuatreTest {
 	
 	@Test
 	public void testSetUltCol() {
+		//Comproba que el set es realitza correctament
 		ConnectaQuatre c4= new ConnectaQuatre(5, 6);
 		c4.setUltCol(2);
 		assertEquals(2, c4.getUltCol());
 	}
 	@Test
 	public void testSetUltRow() {
+		//Comproba que el set es realitza correctament
 		ConnectaQuatre c4= new ConnectaQuatre(5, 6);
 		c4.setUltRow(2);
 		assertEquals(2, c4.getUltRow());
 	}
 	@Test
 	public void testHoritzontal() {
+		//Funcionament normal de la funcio,Utilitzant MOCK object.
 		MockTableroHoritzontal mcHoritzontal =new MockTableroHoritzontal();
 		ConnectaQuatre c4=new ConnectaQuatre(5, 9);
 		 c4.setTauler(mcHoritzontal.getTauler());
@@ -89,10 +98,6 @@ public class ConnectaQuatreTest {
 	@Test
 	public void testVertical() {
 		//Funcionament normal de la funció
-		//ConnectaQuatre c4=new ConnectaQuatre(5, 9);
-		 /*for(int j=0;j<c4.getAltura();j++) {
-			  c4.getTauler()[j][0]='H';
-		 }*/
 		 MockTableroVertical mcVertical= new MockTableroVertical();
 		 ConnectaQuatre c4=new ConnectaQuatre(5, 9);
 		 c4.setTauler(mcVertical.getTauler());
@@ -299,7 +304,7 @@ public class ConnectaQuatreTest {
 	@Test
 	public void testEstadins()
 	{
-		
+		//Li pasaem dues strings una te la sentencia RRRR dins y l'altra no.
 		boolean PROBAtrue=ConnectaQuatre.estaDins("YYYYRRRRYYYY", "RRRR");
 		assertEquals(true, PROBAtrue);
 		boolean Probafalse=ConnectaQuatre.estaDins("YRYRYRYRYRYRY", "RRRR");
