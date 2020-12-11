@@ -4,47 +4,45 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class MockKeyboardInput implements InterfazTeclado {
+public class KeyboardInputMock implements InterfazTeclado {
 	private List<Integer> jugadas = new ArrayList<Integer>();
-	@Override
-	public int leerDato(Scanner input) {
-		return jugadas.remove(0);
-	}
-	public MockKeyboardInput(int numero) {
+	
+	
+	public KeyboardInputMock(int numero) {
 		switch(numero) {
-		//Sempre inicia el mateix color.
+		//Sempre inicia la partida les fitxes vermelles.
 		case 1:
-			//Guanya amb horitzontals
+			//Guanya vermell amb horitzontals
 			jugadas.add(0);
 			jugadas.add(-1);
 			jugadas.add(0);
 			jugadas.add(1);
 			jugadas.add(1);
-			jugadas.add(5);
+			jugadas.add(7);
 			jugadas.add(2);
 			jugadas.add(2);
 			jugadas.add(3);
 
 			break;
 		case 2:
-			//Guanya amb verticals
+			//Guanya vermell amb verticals
 			jugadas.add(0);
 			jugadas.add(-1);
 			jugadas.add(1);
 			jugadas.add(0);
-			jugadas.add(5);
+			jugadas.add(7);
 			jugadas.add(2);
 			jugadas.add(0);
 			jugadas.add(3);
 			jugadas.add(0);
 			break;
 		case 3:
-			//Guanya amb diagonal
+			//Guanya vermell amb diagonal
 			jugadas.add(0);
 			jugadas.add(-1);
 			jugadas.add(1);
 			jugadas.add(1);
-			jugadas.add(5);
+			jugadas.add(7);
 			jugadas.add(2);
 			jugadas.add(3);
 			jugadas.add(2);
@@ -55,45 +53,45 @@ public class MockKeyboardInput implements InterfazTeclado {
 			jugadas.add(3);
 			break;
 		case 4:
-			//Guanya amb horitzontals
+			//Guanya groc amb horitzontals
 			jugadas.add(4);
 			jugadas.add(0);
 			jugadas.add(-1);
 			jugadas.add(0);
 			jugadas.add(1);
 			jugadas.add(1);
-			jugadas.add(5);
+			jugadas.add(7);
 			jugadas.add(2);
 			jugadas.add(2);
 			jugadas.add(3);
 			break;
 		case 5:
-			//Guanya amb verticals
-			jugadas.add(4);
+			//Guanya groc amb verticals
+			jugadas.add(6);
 			jugadas.add(0);
 			jugadas.add(-1);
 			jugadas.add(1);
 			jugadas.add(0);
-			jugadas.add(5);
+			jugadas.add(7);
 			jugadas.add(2);
 			jugadas.add(0);
 			jugadas.add(3);
 			jugadas.add(0);
 			break;
 		case 6:
-			//Guanya amb diagonal
-			jugadas.add(4);
+			//Guanya groc amb diagonal
+			jugadas.add(6);
 			jugadas.add(0);
 			jugadas.add(-1);
 			jugadas.add(1);
 			jugadas.add(1);
-			jugadas.add(5);
+			jugadas.add(7);
 			jugadas.add(2);
 			jugadas.add(3);
 			jugadas.add(2);
 			jugadas.add(2);
 			jugadas.add(3);
-			jugadas.add(4);
+			jugadas.add(6);
 			jugadas.add(3);
 			jugadas.add(3);
 			break;
@@ -101,4 +99,11 @@ public class MockKeyboardInput implements InterfazTeclado {
 		}
 	
 	}
+	
+	@Override
+	public int leerDato(Scanner input) {
+		// TODO Auto-generated method stub
+	    return jugadas.remove(0);
+	}
+	
 }
