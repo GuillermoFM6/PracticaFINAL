@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class KeyboardInputMock implements InterfazTeclado {
+	//Mock creat per simular els inputs que introdueix l'usuari per teclat
+	
 	private List<Integer> jugadas = new ArrayList<Integer>();
 	
 	
@@ -95,7 +97,60 @@ public class KeyboardInputMock implements InterfazTeclado {
 			jugadas.add(3);
 			jugadas.add(3);
 			break;
-			
+		case 7:
+			//Empat. No hi ha guanyadors
+			jugadas.add(-1);
+			jugadas.add(7);
+			jugadas.add(0);
+			jugadas.add(1);
+			jugadas.add(0);
+			jugadas.add(1);
+			jugadas.add(0);
+			jugadas.add(1);
+			jugadas.add(1);
+			jugadas.add(0);
+			jugadas.add(1);
+			jugadas.add(0);
+			jugadas.add(1);
+			jugadas.add(0);
+			jugadas.add(0);
+			jugadas.add(1);
+			jugadas.add(2);
+			jugadas.add(3);
+			jugadas.add(2);
+			jugadas.add(3);
+			jugadas.add(2);
+			jugadas.add(3);
+			jugadas.add(3);
+			jugadas.add(2);
+			jugadas.add(3);
+			jugadas.add(2);
+			jugadas.add(3);
+			jugadas.add(2);
+			jugadas.add(2);
+			jugadas.add(3);
+			jugadas.add(4);
+			jugadas.add(5);
+			jugadas.add(4);
+			jugadas.add(5);
+			jugadas.add(4);
+			jugadas.add(5);
+			jugadas.add(5);
+			jugadas.add(4);
+			jugadas.add(5);
+			jugadas.add(4);
+			jugadas.add(5);
+			jugadas.add(4);
+			jugadas.add(4);
+			jugadas.add(5);
+			jugadas.add(6);
+			jugadas.add(6);
+			jugadas.add(6);
+			jugadas.add(6);
+			jugadas.add(6);
+			jugadas.add(6);
+			jugadas.add(6);
+			break;
 		}
 	
 	}
