@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import Model.ConnectaQuatre;
 import Model.InterfazTeclado;
-import Model.KeyboardInputMock;
+import Model.TeclatMock;
 
 public class Partida {
 	//Classe que creada per automatitzar els tests. 
@@ -19,7 +19,7 @@ public class Partida {
 		moves = altura * amplada;
 		controlador = new Controlador(amplada, altura);
 	}
-	public String play(int numero) {
+	public String jugar(int numero) {
 		/*Simula una partida a partir d'un mock object que conté les jugades d'aquesta. 
 		 El número que passem com a paràmetre correspon a una inicilització diferent del mock que permetrà simular les següents partides:
 		
@@ -28,7 +28,8 @@ public class Partida {
 			3. Vermell guanya amb línia diagonal
 			4. Groc guanya amb línia horitzontal
 			5. Groc guanya amb línia vertical
-			6. Groc guanya amb línia diagonal*/
+			6. Groc guanya amb línia diagonal
+			7. Empat*/
 			
 		    String missatgeFinal = "";
 			boolean guanyador = false;
@@ -36,7 +37,7 @@ public class Partida {
 		      //Creem la partida
 		      controlador.vistaEscriuNumero(amplada);
 		      controlador.vistaPrintBoard(controlador.getBoard());
-		      InterfazTeclado keyboardInputMock= new KeyboardInputMock(numero);
+		      InterfazTeclado keyboardInputMock= new TeclatMock(numero);
 		      int player = 0;
 		      //Iterem sobre el nombre màxim de moviments i a cada iteració canviem al jugador que li toca
 		      while(moves > 0 && !guanyador) {

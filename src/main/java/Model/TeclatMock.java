@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class KeyboardInputMock implements InterfazTeclado {
+public class TeclatMock implements InterfazTeclado {
 	//Mock creat per simular els inputs que introdueix l'usuari per teclat
 	
 	private List<Integer> jugadas = new ArrayList<Integer>();
 	
 	
-	public KeyboardInputMock(int numero) {
+	public TeclatMock(int numero) {
 		switch(numero) {
 		//Sempre inicia la partida les fitxes vermelles.
 		case 1:
