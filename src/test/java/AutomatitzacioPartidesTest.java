@@ -6,7 +6,7 @@ import org.junit.Test;
 import Controlador.Partida;
 import Model.ConnectaQuatre;
 
-public class automatitzacióPartidesTest {
+public class AutomatitzacioPartidesTest {
 
 	Partida connectaQuatre;
 	ConnectaQuatre tauler;
