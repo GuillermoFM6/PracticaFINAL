@@ -6,7 +6,7 @@ import org.junit.Test;
 import Controlador.Partida;
 import Model.ConnectaQuatre;
 
-public class automatedPlaysTest {
+public class AutomatitzacioPartidesTest {
 
 	Partida connectaQuatre;
 	ConnectaQuatre tauler;
@@ -22,49 +22,49 @@ public class automatedPlaysTest {
 
 	@Test
 	public void guanyaVermellHoritzontalmentTest() {
-		String missatgeFinal = connectaQuatre.play(1);
+		String missatgeFinal = connectaQuatre.jugar(1);
 		assertEquals(guanyaVermell, missatgeFinal);
 		assertEquals("RRRR...", tauler.horitzontal());
 	}
 	
 	@Test
 	public void guanyaVermellVerticalmentTest() {
-		String missatgeFinal = connectaQuatre.play(2);
+		String missatgeFinal = connectaQuatre.jugar(2);
 		assertEquals(guanyaVermell, missatgeFinal);
 		assertEquals("..RRRR", tauler.vertical());
 		}
 	
 	@Test
 	public void guanyaVermellDiagonalmentTest() {
-		String missatgeFinal = connectaQuatre.play(3);
+		String missatgeFinal = connectaQuatre.jugar(3);
 		assertEquals(guanyaVermell, missatgeFinal);
 		assertEquals("..RRRR", tauler.diagonalPositiva());
 	}
 	
 	@Test
 	public void guanyaGrocHoritzontalmetTest() {
-		String missatgeFinal = connectaQuatre.play(4);
+		String missatgeFinal = connectaQuatre.jugar(4);
 		assertEquals(guanyaGroc, missatgeFinal);
 		assertEquals("YYYYR..", tauler.horitzontal());
 	}
 	
 	@Test
 	public void guanyaGrocVerticalmentTest() {
-		String missatgeFinal = connectaQuatre.play(5);
+		String missatgeFinal = connectaQuatre.jugar(5);
 		assertEquals(guanyaGroc, missatgeFinal);
 		assertEquals("..YYYY", tauler.vertical());
 	}
 	
 	@Test
 	public void guanyaGrocDiagonalmentTest() {
-		String missatgeFinal = connectaQuatre.play(6);
+		String missatgeFinal = connectaQuatre.jugar(6);
 		assertEquals(guanyaGroc, missatgeFinal);
 		assertEquals("..YYYY", tauler.diagonalPositiva());
 	}
 	
 	@Test
 	public void empatTest() {
-		String missatgeFinal = connectaQuatre.play(7);
+		String missatgeFinal = connectaQuatre.jugar(7);
 		assertEquals(empat, missatgeFinal);
 	}
 
