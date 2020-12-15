@@ -9,7 +9,7 @@ public class Principal {
 public static void main(String[] args) {
     try (Scanner input = new Scanner(System.in)) {
       //Assignem les dimensions del nostre tauler
-      int altura = 7; int amplada = 7; int moves = altura * amplada;
+      int altura = 6; int amplada = 8; int moves = altura * amplada;
 
       //Creem la partida
       Controlador controlador = new Controlador(amplada, altura);

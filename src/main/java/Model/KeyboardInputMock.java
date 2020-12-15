@@ -113,8 +113,6 @@ public class KeyboardInputMock implements InterfazTeclado {
 			jugadas.add(0);
 			jugadas.add(1);
 			jugadas.add(0);
-			jugadas.add(0);
-			jugadas.add(1);
 			jugadas.add(2);
 			jugadas.add(3);
 			jugadas.add(2);
@@ -127,8 +125,6 @@ public class KeyboardInputMock implements InterfazTeclado {
 			jugadas.add(2);
 			jugadas.add(3);
 			jugadas.add(2);
-			jugadas.add(2);
-			jugadas.add(3);
 			jugadas.add(4);
 			jugadas.add(5);
 			jugadas.add(4);
@@ -141,8 +137,6 @@ public class KeyboardInputMock implements InterfazTeclado {
 			jugadas.add(4);
 			jugadas.add(5);
 			jugadas.add(4);
-			jugadas.add(4);
-			jugadas.add(5);
 			jugadas.add(6);
 			jugadas.add(6);
 			jugadas.add(6);

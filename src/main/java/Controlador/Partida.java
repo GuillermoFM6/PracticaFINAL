@@ -14,7 +14,7 @@ public class Partida {
 	private int moves;
 	
 	public Partida() {
-		altura = 7;
+		altura = 6;
 		amplada = 7;
 		moves = altura * amplada;
 		controlador = new Controlador(amplada, altura);

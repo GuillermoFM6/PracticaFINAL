@@ -31,14 +31,14 @@ public class automatedPlaysTest {
 	public void guanyaVermellVerticalmentTest() {
 		String missatgeFinal = connectaQuatre.play(2);
 		assertEquals(guanyaVermell, missatgeFinal);
-		assertEquals("...RRRR", tauler.vertical());
+		assertEquals("..RRRR", tauler.vertical());
 		}
 	
 	@Test
 	public void guanyaVermellDiagonalmentTest() {
 		String missatgeFinal = connectaQuatre.play(3);
 		assertEquals(guanyaVermell, missatgeFinal);
-		assertEquals("...RRRR", tauler.diagonalPositiva());
+		assertEquals("..RRRR", tauler.diagonalPositiva());
 	}
 	
 	@Test
@@ -52,14 +52,14 @@ public class automatedPlaysTest {
 	public void guanyaGrocVerticalmentTest() {
 		String missatgeFinal = connectaQuatre.play(5);
 		assertEquals(guanyaGroc, missatgeFinal);
-		assertEquals("...YYYY", tauler.vertical());
+		assertEquals("..YYYY", tauler.vertical());
 	}
 	
 	@Test
 	public void guanyaGrocDiagonalmentTest() {
 		String missatgeFinal = connectaQuatre.play(6);
 		assertEquals(guanyaGroc, missatgeFinal);
-		assertEquals("...YYYY", tauler.diagonalPositiva());
+		assertEquals("..YYYY", tauler.diagonalPositiva());
 	}
 	
 	@Test
