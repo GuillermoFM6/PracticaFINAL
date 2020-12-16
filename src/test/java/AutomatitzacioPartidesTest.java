@@ -12,60 +12,112 @@ public class AutomatitzacioPartidesTest {
 	ConnectaQuatre tauler;
 	String guanyaGroc = "Jugador " + "Y" + " ha guanyat!";
 	String guanyaVermell = "Jugador " + "R" + " ha guanyat!";
-	String empat = "S'ha acabat. No hi ha guanyador!";
+	String missatgeEmpat = "S'ha acabat. No hi ha guanyador!";
 	
 	@Before
 	public void setUp() throws Exception {
 		connectaQuatre = new Partida();
-		tauler = connectaQuatre.getTauler();	
+		tauler = connectaQuatre.getTauler();
 	}
 
 	@Test
 	public void guanyaVermellHoritzontalmentTest() {
+		char[][] taulerGuanyaVermellHoritzontalment = 
+					{{'.','.','.','.','.','.','.'},
+					{'.','.','.','.','.','.','.'},
+					{'.','.','.','.','.','.','.'},
+					{'.','.','.','.','.','.','.'},
+					{'Y','Y','Y','.','.','.','.'},
+					{'R','R','R','R','.','.','.'},};
+		
 		String missatgeFinal = connectaQuatre.jugar(1);
 		assertEquals(guanyaVermell, missatgeFinal);
-		assertEquals("RRRR...", tauler.horitzontal());
+		assertArrayEquals(taulerGuanyaVermellHoritzontalment,tauler.getTauler());
 	}
 	
 	@Test
 	public void guanyaVermellVerticalmentTest() {
+		char[][] taulerGuanyaVermellVerticalment = 
+			{{'.','.','.','.','.','.','.'},
+			{'.','.','.','.','.','.','.'},
+			{'R','.','.','.','.','.','.'},
+			{'R','.','.','.','.','.','.'},
+			{'R','.','.','.','.','.','.'},
+			{'R','Y','Y','Y','.','.','.'},};
 		String missatgeFinal = connectaQuatre.jugar(2);
 		assertEquals(guanyaVermell, missatgeFinal);
-		assertEquals("..RRRR", tauler.vertical());
+		assertArrayEquals(taulerGuanyaVermellVerticalment,tauler.getTauler());
+		
 		}
 	
 	@Test
 	public void guanyaVermellDiagonalmentTest() {
+		char[][] taulerGuanyaVermellDiagonalment = 
+			{{'.','.','.','.','.','.','.'},
+			{'.','.','.','.','.','.','.'},
+			{'.','.','.','R','.','.','.'},
+			{'.','.','R','Y','.','.','.'},
+			{'.','R','Y','Y','.','.','.'},
+			{'R','Y','Y','R','R','.','.'},};
 		String missatgeFinal = connectaQuatre.jugar(3);
 		assertEquals(guanyaVermell, missatgeFinal);
-		assertEquals("..RRRR", tauler.diagonalPositiva());
+		assertArrayEquals(taulerGuanyaVermellDiagonalment,tauler.getTauler());
 	}
 	
 	@Test
 	public void guanyaGrocHoritzontalmetTest() {
+		char[][] taulerGuanyaGrocHoritzontalment = 
+			{{'.','.','.','.','.','.','.'},
+			{'.','.','.','.','.','.','.'},
+			{'.','.','.','.','.','.','.'},
+			{'.','.','.','.','.','.','.'},
+			{'R','R','R','.','.','.','.'},
+			{'Y','Y','Y','Y','R','.','.'},};
 		String missatgeFinal = connectaQuatre.jugar(4);
 		assertEquals(guanyaGroc, missatgeFinal);
-		assertEquals("YYYYR..", tauler.horitzontal());
+		assertArrayEquals(taulerGuanyaGrocHoritzontalment,tauler.getTauler());
 	}
 	
 	@Test
 	public void guanyaGrocVerticalmentTest() {
+		char[][] taulerGuanyaGrocVerticalment = 
+			{{'.','.','.','.','.','.','.'},
+			{'.','.','.','.','.','.','.'},
+			{'Y','.','.','.','.','.','.'},
+			{'Y','.','.','.','.','.','.'},
+			{'Y','.','.','.','.','.','.'},
+			{'Y','R','R','R','.','.','R'},};
 		String missatgeFinal = connectaQuatre.jugar(5);
 		assertEquals(guanyaGroc, missatgeFinal);
-		assertEquals("..YYYY", tauler.vertical());
+		assertArrayEquals(taulerGuanyaGrocVerticalment,tauler.getTauler());
 	}
 	
 	@Test
 	public void guanyaGrocDiagonalmentTest() {
+		char[][] taulerGuanyaGrocDiagonalment = 
+			{{'.','.','.','.','.','.','.'},
+			{'.','.','.','.','.','.','.'},
+			{'.','.','.','Y','.','.','.'},
+			{'.','.','Y','R','.','.','.'},
+			{'.','Y','R','R','.','.','Y'},
+			{'Y','R','R','Y','.','.','R'},};
 		String missatgeFinal = connectaQuatre.jugar(6);
 		assertEquals(guanyaGroc, missatgeFinal);
-		assertEquals("..YYYY", tauler.diagonalPositiva());
+		assertArrayEquals(taulerGuanyaGrocDiagonalment,tauler.getTauler());
 	}
 	
 	@Test
 	public void empatTest() {
+		char[][] empat = 
+			{{'Y','R','Y','R','Y','R','Y'},
+			{'Y','R','Y','R','Y','R','R'},
+			{'Y','R','Y','R','Y','R','Y'},
+			{'R','Y','R','Y','R','Y','R'},
+			{'R','Y','R','Y','R','Y','Y'},
+			{'R','Y','R','Y','R','Y','R'},};
 		String missatgeFinal = connectaQuatre.jugar(7);
-		assertEquals(empat, missatgeFinal);
+		assertEquals(missatgeEmpat, missatgeFinal);
+		assertArrayEquals(empat,tauler.getTauler());
 	}
 
 }
